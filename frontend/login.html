@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Jomoro Koffee</title>
+  <meta name="description" content="Sign in to your Jomoro Koffee account to browse the menu and place orders." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">Jomoro <span>Koffee</span></div>
+      <p class="auth-subtitle">Sign in to your account</p>
+
+      <div id="login-alert" class="alert alert-error" style="display:none"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            placeholder="Your password"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+
+        <button id="login-btn" type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:8px">
+          Sign In
+        </button>
+      </form>
+
+      <p style="text-align:center;margin-top:20px;color:var(--clr-muted);font-size:0.9rem">
+        No account yet?
+        <a href="register.html">Create one</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders - Jomoro Koffee</title>
+  <meta name="description" content="View your Jomoro Koffee order history and track order status." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/orders.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="menu.html" class="navbar-brand">Jomoro <span>Koffee</span></a>
+      <ul class="navbar-links">
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="orders.html" class="active">My Orders</a></li>
+        <li><a href="#" onclick="logout()" style="color:var(--clr-muted)">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1 class="page-title">My <span>Orders</span></h1>
+      <p style="color:var(--clr-muted);margin-top:6px">Track all your past and current orders.</p>
+    </div>
+
+    <div id="orders-container">
+      <div class="spinner"></div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/orders.js"></script>
+</body>
+</html>

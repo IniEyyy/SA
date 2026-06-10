@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Cart {
+  id     Int        @id @default(autoincrement())
+  userId Int        @unique @map("user_id")
+  items  CartItem[]
+
+  @@map("carts")
+}
+
+model CartItem {
+  id        Int  @id @default(autoincrement())
+  cartId    Int  @map("cart_id")
+  productId Int  @map("product_id")
+  quantity  Int
+  cart      Cart @relation(fields: [cartId], references: [id], onDelete: Cascade)
+
+  @@unique([cartId, productId])
+  @@map("cart_items")
+}
+
+model Order {
+  id        Int           @id @default(autoincrement())
+  userId    Int           @map("user_id")
+  createdAt DateTime      @default(now()) @map("created_at")
+  details   OrderDetail[]
+
+  @@map("orders")
+}
+
+model OrderDetail {
+  id        Int   @id @default(autoincrement())
+  orderId   Int   @map("order_id")
+  productId Int   @map("product_id")
+  price     Float @db.Double
+  quantity  Int
+  order     Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@map("order_details")
+}

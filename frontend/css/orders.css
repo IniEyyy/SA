@@ -1,0 +1,22 @@
+.order-card { margin-bottom: 20px; }
+
+.order-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.order-date {
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  margin-top: 2px;
+}
+
+.order-total {
+  text-align: right;
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.order-total span { color: var(--clr-amber); }

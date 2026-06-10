@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu - Jomoro Koffee</title>
+  <meta name="description" content="Browse our full coffee menu and add items to your cart." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="menu.html" class="navbar-brand">Jomoro <span>Koffee</span></a>
+      <ul class="navbar-links">
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li>
+          <a href="cart.html" id="cart-link" style="position:relative">
+            Cart
+            <span id="cart-badge" style="
+              display:none;
+              position:absolute;
+              top:-6px;right:-10px;
+              background:var(--clr-amber);
+              color:var(--clr-bg);
+              font-size:0.7rem;
+              font-weight:700;
+              padding:2px 6px;
+              border-radius:99px;
+              min-width:18px;
+              text-align:center;
+            ">0</span>
+          </a>
+        </li>
+        <li><a href="orders.html">My Orders</a></li>
+        <li><a href="#" onclick="logout()" style="color:var(--clr-muted)">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1 class="page-title">Our <span>Menu</span></h1>
+      <p style="color:var(--clr-muted);margin-top:6px">Fresh coffee crafted with care — order anytime.</p>
+    </div>
+
+    <div id="product-grid" class="product-grid">
+      <div class="spinner"></div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

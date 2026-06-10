@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account - Jomoro Koffee</title>
+  <meta name="description" content="Create a Jomoro Koffee account to start ordering your favourite coffee." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">Jomoro <span>Koffee</span></div>
+      <p class="auth-subtitle">Create a new account</p>
+
+      <div id="register-alert" class="alert alert-error" style="display:none"></div>
+
+      <form id="register-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="form-group">
+            <label class="form-label" for="firstName">First Name</label>
+            <input
+              id="firstName"
+              type="text"
+              class="form-control"
+              placeholder="John"
+              required
+              autocomplete="given-name"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lastName">Last Name</label>
+            <input
+              id="lastName"
+              type="text"
+              class="form-control"
+              placeholder="Doe"
+              required
+              autocomplete="family-name"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            placeholder="you@example.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            placeholder="Min 8 chars, at least 2 digits, no spaces"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="confirm">Confirm Password</label>
+          <input
+            id="confirm"
+            type="password"
+            class="form-control"
+            placeholder="Repeat your password"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+
+        <button id="register-btn" type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:8px">
+          Create Account
+        </button>
+      </form>
+
+      <p style="text-align:center;margin-top:20px;color:var(--clr-muted);font-size:0.9rem">
+        Already have an account?
+        <a href="login.html">Sign in</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

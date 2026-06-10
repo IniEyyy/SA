@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - Jomoro Koffee</title>
+  <meta name="description" content="Review your cart and place your Jomoro Koffee order." />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="menu.html" class="navbar-brand">Jomoro <span>Koffee</span></a>
+      <ul class="navbar-links">
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="cart.html" class="active">Cart</a></li>
+        <li><a href="orders.html">My Orders</a></li>
+        <li><a href="#" onclick="logout()" style="color:var(--clr-muted)">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1 class="page-title">Your <span>Cart</span></h1>
+    </div>
+
+    <div id="cart-alert" class="alert" style="display:none"></div>
+
+    <div id="cart-empty" class="empty-state" style="display:none">
+      <div class="empty-state-icon">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p style="margin-bottom:20px">Head over to the menu to add some items.</p>
+      <a href="menu.html" class="btn btn-primary">Browse Menu</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start">
+      <div>
+        <table id="cart-table" class="table" style="display:none">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-body"></tbody>
+        </table>
+      </div>
+
+      <div id="cart-summary" class="cart-summary" style="display:none">
+        <div class="cart-summary-row">
+          <span>Items</span>
+          <span id="cart-item-count">0</span>
+        </div>
+        <div class="cart-summary-total">
+          <span>Total</span>
+          <span id="cart-total">$0.00</span>
+        </div>
+        <button
+          id="place-order-btn"
+          class="btn btn-primary btn-block btn-lg"
+          style="margin-top:20px"
+          onclick="placeOrder()"
+        >
+          Place Order
+        </button>
+        <a href="menu.html" class="btn btn-outline btn-block" style="margin-top:10px">
+          Continue Shopping
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS jomoro_transaction;
+USE jomoro_transaction;
+
+CREATE TABLE IF NOT EXISTS carts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL UNIQUE
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS cart_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  cart_id INT NOT NULL,
+  product_id INT NOT NULL,
+  quantity INT NOT NULL,
+  CONSTRAINT uq_cart_product UNIQUE (cart_id, product_id),
+  CONSTRAINT fk_cart_items_cart FOREIGN KEY (cart_id) REFERENCES carts(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS order_details (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  order_id INT NOT NULL,
+  product_id INT NOT NULL,
+  price DOUBLE NOT NULL,
+  quantity INT NOT NULL,
+  CONSTRAINT fk_order_details_order FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
